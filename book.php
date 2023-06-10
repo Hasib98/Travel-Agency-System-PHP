@@ -1,3 +1,9 @@
+<?php 
+    session_start();
+    $user = $_SESSION['user_login'];
+    $firstname = $user['firstname'];
+    $lastname = $user['lastname'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,7 +33,15 @@
         <a href="package.php">package</a>
         <a href="book.php">book</a>
         <a href="hotelbooking.php">hotel booking</a>
-        <a href="login.php">login</a>
+        <a href=""> <?php
+             echo $firstname ;
+              ?></a>
+        <a href=""> <?php
+              echo $lastname ;
+              ?></a>
+
+    <a href="logout.php">Logout</a>
+     
         <!-- <a href="registration.php">registration</a> -->
     </nav>
 

@@ -32,8 +32,8 @@ require_once 'session.php';
         <a href="home.php">Home</a>
         <a href="about.php">about</a>
         <a href="package.php">package</a>
-        <a href="book.php">book</a>
-        <a href="hotelbooking.php">hotel booking</a>
+        <!-- <a href="book.php">book</a> -->
+        <!-- <a href="hotelbooking.php">hotel booking</a> -->
         <a href="login.php">admin login</a>
         <a href="user_login.php">login</a>
         <!-- <a href="registration.php">registration</a> -->

@@ -1,3 +1,16 @@
+<?php 
+    $firstname = null;
+    $lastname =  null;
+
+    session_start();
+    if(isset( $_SESSION['user_login'])){
+        $user = $_SESSION['user_login'];
+        $firstname = $user['firstname'];
+        $lastname = $user['lastname'];
+    }
+    
+    
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,13 +35,39 @@
 <section class="header">
     <a href="home.php" class="logo">Take a Trip</a>
     <nav class="navbar">
-        <a href="home.php">Home</a>
-        <a href="about.php">about</a>
-        <a href="package.php">package</a>
-        <a href="book.php">book</a>
-        <a href="hotelbooking.php">hotel booking</a>
-        <a href="login.php">login</a>
-        <!-- <a href="registration.php">registration</a> -->
+        <?php
+            if(null!=($firstname && $lastname)){
+                echo '
+
+
+
+                <a href="home.php">Home</a>
+                <a href="about.php">about</a>
+                <a href="package.php">package</a>
+                <a href="book.php">book</a>
+                <a href="hotelbooking.php">hotel booking</a> 
+                <a href="">'.$firstname.'</a>
+                <a href="">'.$lastname.'</a>
+                <a href="logout.php">Logout</a>
+
+                
+                ';
+            }
+            else{
+                echo '
+                <a href="home.php">Home</a>
+                <a href="about.php">about</a>
+                <a href="package.php">package</a>
+                <!-- <a href="book.php">book</a> -->
+                <!-- <a href="hotelbooking.php">hotel booking</a> -->
+                <a href="login.php">admin login</a>
+                <a href="user_login.php">login</a>
+                <!-- <a href="registration.php">registration</a> -->
+                ';
+            }
+         ?>
+        
+        
     </nav>
 
       <div id="menu-btn" class="fas fa-bars"></div>
