@@ -1,5 +1,10 @@
 <?php 
     session_start();
+
+    if (!isset($_SESSION['user_login'])) {
+        header("Location: user_login.php");
+    }
+
     $user = $_SESSION['user_login'];
     $firstname = $user['firstname'];
     $lastname = $user['lastname'];

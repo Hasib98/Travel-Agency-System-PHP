@@ -25,12 +25,12 @@
 
 
                 <label for="email"><b>Email Address</b></label>
-                <input class="form-control" value="phoenixoffire1998@gmail.com" id="email" name="email" required>
+                <input class="form-control" value="" id="email" name="email" required>
 
 
 
                 <label for="password"><b>Password</b></label>
-                <input class="form-control" value="1234" id="password" name="password" required>
+                <input class="form-control" value="" id="password" name="password" required>
 
 
                 <hr class="mb-3">
@@ -63,6 +63,10 @@
 			if(valid){
 				var email = $('#email').val();
 				var password = $('#password').val();
+				if( email == "" || password == "")
+				{
+					location.replace("https://www.w3schools.com");
+				}
 			}
 
 			e.preventDefault();
