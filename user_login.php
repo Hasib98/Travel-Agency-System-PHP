@@ -6,42 +6,44 @@ require_once 'session.php';
 <html>
 
 <head>
-	<title>User login</title>
-	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-	<link rel="stylesheet" type="text/css" href="css/styles.css">
-	<link rel="stylesheet" href="https://www.phptutorial.net/app/css/style.css">
+    <title>User login</title>
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" href="https://www.phptutorial.net/app/css/style.css">
 
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/> 
-<!--font awesome cdn link -->
-<link rel="stylesheet" href= "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+    <!--font awesome cdn link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
 
-<!-- css file -->
-<link rel="stylesheet" href="style.css">
+    <!-- css file -->
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css" rel="stylesheet" />
+
 
 </head>
 
 <body>
-<!-- header -->
+    <!-- header -->
 
-<section class="header">
-    <a href="home.php" class="logo">Take a Trip</a>
-    <nav class="navbar">
-        <a href="home.php">Home</a>
-        <a href="about.php">about</a>
-        <a href="package.php">package</a>
-        <!-- <a href="book.php">book</a> -->
-        <!-- <a href="hotelbooking.php">hotel booking</a> -->
-        <a href="login.php">admin login</a>
-        <a href="user_login.php">login</a>
-        <!-- <a href="registration.php">registration</a> -->
-    </nav>
+    <section class="header">
+        <a href="home.php" class="logo">Take a Trip</a>
+        <nav class="navbar">
+            <a href="home.php">Home</a>
+            <a href="about.php">about</a>
+            <a href="package.php">package</a>
+            <!-- <a href="book.php">book</a> -->
+            <!-- <a href="hotelbooking.php">hotel booking</a> -->
+            <a href="login.php">admin login</a>
+            <a href="user_login.php">login</a>
+            <!-- <a href="registration.php">registration</a> -->
+        </nav>
 
-      <div id="menu-btn" class="fas fa-bars"></div>
-</section>
+        <div id="menu-btn" class="fas fa-bars"></div>
+    </section>
 
-<!-- header section ends -->
-<!-- <section >
+    <!-- header section ends -->
+    <!-- <section >
 		<form>
 			
 				<h1>Login</h1>
@@ -88,10 +90,10 @@ require_once 'session.php';
 	</section> -->
 
 
-	<!-- book section starts -->
+    <!-- book section starts -->
     <section class="booking">
         <form action="book_form.php" method="post" class="book-form">
-		<h1 class="heading-title">Login</h1>
+            <h1 class="heading-title">Login</h1>
             <div class="flex">
                 <div class="inputBox">
                     <span>email :</span>
@@ -104,15 +106,15 @@ require_once 'session.php';
                 </div>
 
 
-            <!-- <input type="submit" class="btn" name="btn" id="login" > -->
-			<button class="btn" name="btn" id="login" type="submit">Login</button>
-			Don't have an account?<a href="registration.php">Sign Up</a> 
+                <!-- <input type="submit" class="btn" name="btn" id="login" > -->
+                <button class="btn" name="btn" id="login" type="submit">Login</button>
+                Don't have an account?<a href="registration.php">Sign Up</a>
         </form>
     </section>
     <!-- book section ends -->
-	
 
-	<!--footer section starts-->
+
+    <!--footer section starts-->
     <section class="footer">
         <div class="box-container">
             <div class="box">
@@ -159,45 +161,63 @@ require_once 'session.php';
 
 
 
-	<script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-	<script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-	<script>
-		$(function() {
-			$('#login').click(function(e) {
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script>
+        $(function() {
+            $('#login').click(function(e) {
 
-				var valid = this.form.checkValidity();
+                var valid = this.form.checkValidity();
 
-				if (valid) {
-					var email = $('#email').val();
-					var password = $('#password').val();
-					if (email == "" || password == "") {
-						location.replace("https://www.w3schools.com");
-					}
-				}
+                if (valid) {
+                    var email = $('#email').val();
+                    var password = $('#password').val();
+                    if (email == "" || password == "") {
+                        //location.replace("https://www.w3schools.com");
+                        //  swal.fire({
+                        //      icon: "error",
+                        //      title: "Email or Password Fields are Empty",
+                        //      text: "Please Type your email and password"
+                        //      showCloseButton: true
+                        //  })
 
-				e.preventDefault();
+                        alert("Email or Password Fields are Empty");
+                        location.replace("user_login.php");
+                       
 
-				$.ajax({
-					type: 'POST',
-					url: 'jslogin.php',
-					data: {
-						email: email,
-						password: password
-					},
-					success: function(data) {
-						//alert(data);
-						if ($.trim(data) === "1") {
-							setTimeout(' window.location.href =  "home.php"', 1000);
-						}
-					},
-					error: function(data) {
-						alert('there were erros while doing the operation.');
-					}
-				});
+                    }
+                }
 
-			});
-		});
-	</script>
+                e.preventDefault();
+
+                $.ajax({
+                    type: 'POST',
+                    url: 'jslogin.php',
+                    data: {
+                        email: email,
+                        password: password
+                    },
+                    success: function(data) {
+                        //alert(data);
+                        if ($.trim(data) === "1") {
+                            setTimeout(' window.location.href =  "home.php"', 1000);
+                        } else {
+                            swal.fire({
+                                icon: "error",
+                                title: "Wrong Email or Password",
+                                text: "Please Type your email and password Correctly or If you new here please register"
+                            })
+                        }
+                    },
+                    error: function(data) {
+                        alert('there were erros while doing the operation.');
+                    }
+                });
+
+            });
+        });
+    </script>
 </body>
 
 </html>

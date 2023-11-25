@@ -49,6 +49,8 @@ require_once('config.php')
     <!-- header section ends -->
     <div>
         <?php
+
+        $emailErr = 'ff';
         if (isset($_POST['create'])) {
             $firstname = $_POST['firstname'];
             $lastname = $_POST['lastname'];
@@ -68,9 +70,9 @@ require_once('config.php')
         ?>
     </div>
 
-    <!-- book section starts -->
+    <!-- Registration Form section starts -->
     <section class="booking">
-        <form action="registration.php" method="post" class="book-form">
+        <form action="registration.php" method="post" class="book-form" name="form">
             <h1 class="heading-title">Register Now</h1>
             <div class="flex">
                 <div class="inputBox">
@@ -83,7 +85,7 @@ require_once('config.php')
                 </div>
 
                 <div class="inputBox">
-                    <span>Email Address :</span>
+                    <span>Email Address :</span><span><?php echo $emailErr; ?></span>
                     <input placeholder="Enter your Email" name="email" id="email">
                 </div>
                 <div class="inputBox">
@@ -207,7 +209,20 @@ require_once('config.php')
                     var email = $('#email').val();
                     var phonenumber = $('#phonenumber').val();
                     var password = $('#password').val();
+                    if (firstname == "" || lastname == "" || email == "" || phonenumber == "" || password == "") {
+                        //location.replace("https://www.w3schools.com");
+                        //  swal.fire({
+                        //      icon: "error",
+                        //      title: "Email or Password Fields are Empty",
+                        //      text: "Please Type your email and password"
+                        //      showCloseButton: true
+                        //  })
 
+                        alert("Fields are Empty");
+                        location.replace("registration.php");
+
+
+                    }
 
                     e.preventDefault();
 
