@@ -45,9 +45,8 @@
                 <a href="about.php">about</a>
                 <a href="package.php">package</a>
                 <a href="book.php">book</a>
-                <a href="hotelbooking.php">hotel booking</a> 
-                <a href="">'.$firstname.'</a>
-                <a href="">'.$lastname.'</a>
+                <a href="booking_history.php">'.$firstname.'</a>
+                <a href="booking_history.php">'.$lastname.'</a>
                 <a href="logout.php">Logout</a>
 
                 
@@ -99,9 +98,9 @@
             <img src="admin/<?php $_SERVER['SERVER_NAME'].dirname($_SERVER["REQUEST_URI"]) ?><?php echo $item['image'] ?>" alt="">
             </div>
         <div class="content">
-            <h3><?php echo $item['title'] ?></h3>
+            <h3><?php echo $item['title']?></h3>
             <p><?php echo $item['description'] ?></p>
-            <a href="book.php" class="btn">book now</a>
+            <a href="book.php?data=<?php echo urlencode($item['title']); ?>" class="btn">book now</a>
         </div>
         </div>
     <?php } ?>

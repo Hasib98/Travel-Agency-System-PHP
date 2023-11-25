@@ -18,7 +18,10 @@ require_once('config.php')
                     }else{
                         echo 'There were errors while saving the data';
                     }
-            }else{
-                echo 'No data';
-            }
+                    
+                }else{
+                    echo 'No data';
+                }
+
+                
 ?>

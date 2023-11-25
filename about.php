@@ -45,9 +45,8 @@
                 <a href="about.php">about</a>
                 <a href="package.php">package</a>
                 <a href="book.php">book</a>
-                <a href="hotelbooking.php">hotel booking</a> 
-                <a href="">'.$firstname.'</a>
-                <a href="">'.$lastname.'</a>
+                <a href="booking_history.php">'.$firstname.'</a>
+                <a href="booking_history.php">'.$lastname.'</a>
                 <a href="logout.php">Logout</a>
 
                 

@@ -5,6 +5,9 @@ session_start();
 if (isset($_SESSION['user_login'])) {
     header("Location: userhome.php");
 }
+else{
+    
+}
 
 /*if (isset($_GET['logout'])) {
     session_destroy();

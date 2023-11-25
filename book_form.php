@@ -21,7 +21,7 @@
      sleep(3);
 
 
-     header('location:book.php');
+     header('location:booking_history.php');
   }else{
     echo 'something went wrong. try again.';
   }

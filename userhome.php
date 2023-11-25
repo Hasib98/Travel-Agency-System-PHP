@@ -1,9 +1,16 @@
 <?php
     
     session_start();
-    $user = $_SESSION['user_login'];
-    $firstname = $user['firstname'];
-    $lastname = $user['lastname'];
+
+    if (isset($_SESSION['user_login'])) {
+        $user = $_SESSION['user_login'];
+        $firstname = $user['firstname'];
+        $lastname = $user['lastname'];
+    }
+    else {
+        header("Location: home.php");
+    }
+  
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -34,11 +41,10 @@
         <a href="about.php">about</a>
         <a href="package.php">package</a>
         <a href="book.php">book</a>
-        <a href="hotelbooking.php">hotel booking</a>
-        <a href=""> <?php
+        <a href="booking_history.php"> <?php
              echo $firstname ;
               ?></a>
-        <a href=""> <?php
+        <a href="booking_history.php"> <?php
               echo $lastname ;
               ?></a>
 

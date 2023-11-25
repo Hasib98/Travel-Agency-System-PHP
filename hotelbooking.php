@@ -42,7 +42,6 @@ if ($result = $mysqli->query("SELECT * FROM hotels")) {
         <a href="about.php">about</a>
         <a href="package.php">package</a>
         <a href="book.php">book</a>
-        <a href="hotelbooking.php">hotel booking</a>
         <a href=""> <?php
              echo $firstname ;
               ?></a>
