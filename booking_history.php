@@ -3,11 +3,13 @@ $firstname = null;
 $lastname =  null;
 
 session_start();
+ob_start();
 if (isset($_SESSION['user_login'])) {
     $user = $_SESSION['user_login'];
     $firstname = $user['firstname'];
     $lastname = $user['lastname'];
     $email = $user['email'];
+    $id = $user['id'];
 }
 
 
@@ -94,16 +96,6 @@ if (isset($_SESSION['user_login'])) {
                 // Free result set
                 // echo $result->free_result();
             }
-
-            /*if ($result2 = $mysqli->query($query2)) {
-                $row = $result2->fetch_assoc();
-
-
-                //print_r($row);
-                //echo $row["image"];
-                $image = $row["image"];
-                //echo $image;
-            }*/ 
             ?>
             <?php foreach ($result as $item) { ?>
                 <div class="box">
@@ -112,7 +104,7 @@ if (isset($_SESSION['user_login'])) {
 
                         <img src="admin/<?php
 
-                                        $query2 = "SELECT image from packages where title='" . $item['location'] . "'";
+                                        $query2 = "SELECT * from packages where title='" . $item['location'] . "'";
                                         if ($result2 = $mysqli->query($query2)) {
                                             $row = $result2->fetch_assoc();
 
@@ -120,6 +112,7 @@ if (isset($_SESSION['user_login'])) {
                                             //print_r($row);
                                             //echo $row["image"];
                                             $image = $row["image"];
+                                            $rate = $row["rate"];
                                             //echo $image;
                                         }
                                         echo $image;
@@ -128,24 +121,93 @@ if (isset($_SESSION['user_login'])) {
                     </div>
                     <div class="content">
                         <h3><?php echo $item['location'] ?></h3>
+                        <h3 style="color: darkcyan"><?php echo "("; echo $item['status']; echo ")"; ?></h3>
+                        
+                        <p style="color: green"><?php echo "ID number: ";
+                                                echo $item['id'] ?></p>
                         <p style="color: green"><?php echo "Number of Guests: ";
                                                 echo $item['guests'] ?></p>
                         <p style="color: maroon"></p><?php echo "Arrival Time: ";
                                                         echo $item['arrivals'] ?></p>
                         <p style="color: maroon"></p><?php echo "Leaving Time: ";
-                                                    echo $item['leaving'] ?></p>
+                                                        echo $item['leaving'] ?></p>
                         <p style="color: blue"><?php echo "Address of Guest: ";
                                                 echo $item['address'] ?></p>
                         <p style="color: magenta"><?php echo " Phone Number of Guest: ";
                                                     echo $item['phone'] ?></p>
+                        <form method="post">
+                            <input type="hidden" name="id_to_cancel" value="<?php echo $item['id'] ?>">
+                            <button type="submit" name="cancel_button" class="btn btn-danger">Cancel</button>
+                        </form>
+                        <form method="post">
+                            <input type="hidden" name="id_to_confirm" value="<?php echo $item['id'] ?>">
+                            <input type="hidden" name="location_to_confirm" value="<?php echo $item['location'] ?>">
+                            <input type="hidden" name="guest_to_confirm" value="<?php echo $item['guests'] ?>">
+                            <input type="hidden" name="arrivals_to_confirm" value="<?php echo $item['arrivals'] ?>">
+                            <input type="hidden" name="leaving_to_confirm" value="<?php echo $item['leaving'] ?>">
+                            <button type="submit" name="confirm_button" class="btn btn-danger">Confirm</button>
+                        </form>
                     </div>
                 </div>
+
+
             <?php } ?>
         </div>
 
         <!-- <div class="load-more"><span class="btn">load more</span></div> -->
     </section>
     <!-- package section ends -->
+    <?php
+    if ($_SERVER["REQUEST_METHOD"] == "POST"   && isset($_POST['cancel_button'])) {
+        $idToCancel = $_POST['id_to_cancel'];
+        $query_delete = "DELETE FROM bookings WHERE id = " . $idToCancel;
+
+        echo $query_delete;
+        require('admin/db.php');
+        if ($result = $mysqli->query($query_delete)) {
+        }
+        sleep(1);
+        header('location: booking_history.php');
+        //ob_end_flush();
+    }
+    ?>
+    <!-- Confirm Section -->
+    <?php
+    if ($_SERVER["REQUEST_METHOD"] == "POST"   && isset($_POST['confirm_button'])) {
+
+        $idToConfirm = $_POST['id_to_confirm'];
+        $locationToConfirm = $_POST['location_to_confirm'];
+        $guestToConfirm = $_POST['guest_to_confirm'];
+        $arrivalsToConfirm = $_POST['arrivals_to_confirm'];
+        $leavingToConfirm = $_POST['leaving_to_confirm'];
+        session_start();
+        $_SESSION['idToConfirm'] = $idToConfirm;
+        $_SESSION['locationToConfirm'] = $locationToConfirm;
+        $_SESSION['guestToConfirm'] = $guestToConfirm;
+        $_SESSION['arrivalsToConfirm'] = $arrivalsToConfirm;
+        $_SESSION['leavingToConfirm'] = $leavingToConfirm;
+        $_SESSION['rateToConfirm'] = $rate;
+        header('location: confirm_booking.php');
+        // $query_confirm = "DELETE FROM bookings WHERE id = " . $idToConfirm;
+
+        // echo $query_confirm;
+        // require('admin/db.php');
+        // if ($result = $mysqli->query($query_confirm)) {
+        // }
+        // sleep(1);
+        // header('location: booking_history.php');
+        //echo "Deleted";
+        //ob_end_flush();
+    }
+    ?>
+
+
+
+
+
+
+
+
 
 
 

@@ -11,7 +11,7 @@ if ($result = $mysqli->query("SELECT * FROM packages")) {
 
 ?>
 
-<?php require_once('header.php') ?>
+<?php require('header.php') ?>
 <div class="content-wrapper">
   <div class="content">
     <div class="row">
@@ -28,6 +28,7 @@ if ($result = $mysqli->query("SELECT * FROM packages")) {
                 <th>ID</th>
                 <th>Title</th>
                 <th>Image</th>
+                <th>per person rate</th>
                 <th>Action</th>
               </tr>
             </thead>
@@ -37,7 +38,9 @@ if ($result = $mysqli->query("SELECT * FROM packages")) {
                 <tr>
                   <td> <?php echo $item['id'] ?> </td>
                   <td> <?php echo $item['title'] ?> </td>
+                  
                   <td> <img src="<?php $_SERVER['SERVER_NAME'].dirname($_SERVER["REQUEST_URI"]) ?>  <?php echo $item['image'] ?>" width="200px"> </td>
+                  <td> <?php echo $item['rate'] ?> </td>
                   <td>
                     <a href="edit-package.php?package_id=<?php echo $item['id'] ?>" class="btn btn-primary"> Edit </a>
                     <a href="delete-package.php?package_id=<?php echo $item['id'] ?>" class="btn btn-danger"> Delete </a>

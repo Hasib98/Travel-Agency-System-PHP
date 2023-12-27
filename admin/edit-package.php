@@ -10,6 +10,7 @@ $result = $mysqli->query("SELECT * FROM packages WHERE id = $package_id");
 
 while($row = mysqli_fetch_array($result)){
   $title = $row['title'];
+  $rate = $row['rate'];
   $description = $row['description'];
   $image = $row['image'];
 }
@@ -28,6 +29,10 @@ while($row = mysqli_fetch_array($result)){
           <div class="form-row">
             <label>Title</label>
             <input class="form-control" type="text" name="title" value=" <?php echo $title ?> ">
+          </div>
+          <div class="form-row">
+            <label> Per Person Rate</label>
+            <input class="form-control" type="text" name="rate" value=" <?php echo $rate ?> ">
           </div>
 
           <div class="form-row">

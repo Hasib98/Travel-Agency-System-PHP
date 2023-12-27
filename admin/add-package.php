@@ -12,6 +12,10 @@
             <label>Title</label>
             <input class="form-control" type="text" name="title">
           </div>
+          <div class="form-row">
+            <label>Per Person Rate</label>
+            <input class="form-control" type="text" name="rate">
+          </div>
 
           <div class="form-row">
             <label>Image</label>

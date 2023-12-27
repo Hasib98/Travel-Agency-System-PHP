@@ -6,6 +6,7 @@
 
    $title = $_POST['title'];
    $description = $_POST['description'];
+   $rate = $_POST['rate'];
   //  $image = $_POST['image'];
 
   if(isset($_POST['submit'])){
@@ -60,7 +61,7 @@
     }
     
 
-     $request = "insert into packages(title,description,image) values ('$title','$description','$target_file')";
+     $request = "insert into packages(title,rate,description,image) values ('$title','$rate','$description','$target_file')";
 
      mysqli_query($mysqli, $request);
 

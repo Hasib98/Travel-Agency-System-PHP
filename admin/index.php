@@ -1,5 +1,5 @@
-      <?php require_once('header.php') ?>
-      <?php 
+<?php 
+      require_once('header.php');
         include('db.php');
 
         $hotel_booking = $mysqli->query("SELECT COUNT(*) FROM hotel_bookings");

@@ -13,8 +13,11 @@
      $guests = $_POST['guests'];
      $arrivals = $_POST['arrivals'];
      $leaving = $_POST['leaving'];
+     $amount = " " ;
+     $status = "pending";
+     $pid = " ";
 
-     $request = "insert into bookings(name,email,phone,address,location,arrivals,guests,leaving) values ('$name','$email','$phone','$address','$location','$arrivals','$guests','$leaving')";
+     $request = "insert into bookings(name,email,phone,address,location,arrivals,guests,leaving,status,pid,amount) values ('$name','$email','$phone','$address','$location','$arrivals','$guests','$leaving','$status','$pid','$amount')";
 
      mysqli_query($mysqli, $request);
 
