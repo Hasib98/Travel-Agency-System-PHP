@@ -50,7 +50,7 @@ require_once('config.php')
     <div>
         <?php
 
-        $emailErr = 'ff';
+        $emailErr = ' ';
         if (isset($_POST['create'])) {
             $firstname = $_POST['firstname'];
             $lastname = $_POST['lastname'];
@@ -85,7 +85,7 @@ require_once('config.php')
                 </div>
 
                 <div class="inputBox">
-                    <span>Email Address :</span><span><?php echo $emailErr; ?></span>
+                    <span>Email Address :</span><span class="error"><?php echo $emailErr; ?></span>
                     <input placeholder="Enter your Email" name="email" id="email">
                 </div>
                 <div class="inputBox">
@@ -195,6 +195,7 @@ require_once('config.php')
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <!-- sweet alert link -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script type="text/javascript">
         $(function() {
             $('#register').click(function(e) {
@@ -222,6 +223,23 @@ require_once('config.php')
                         location.replace("registration.php");
 
 
+                    }
+                    const validateEmail = (email) => {
+                        return String(email)
+                            .toLowerCase()
+                            .match(
+                                /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+                            );
+                    };
+                    if (!validateEmail(email)) {
+                        alert("please input a valid email");
+                        location.replace("registration.php");
+                    }
+                    
+                    let isnum = /^\d+$/.test(phonenumber);
+                    if(!isnum ||  phonenumber.length != 11){
+                        alert("please input a valid Phone Number");
+                        location.replace("registration.php");
                     }
 
                     e.preventDefault();

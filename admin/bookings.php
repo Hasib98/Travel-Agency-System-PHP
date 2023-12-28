@@ -115,6 +115,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"   && isset($_POST['cancel_button'])) {
   sleep(1);
   header('location: bookings.php');
   ob_end_flush();
+
+  
 } else if ($_SERVER["REQUEST_METHOD"] == "POST"   && isset($_POST['confirm_button'])) {
   $idToConfirm = $_POST['id_to_cancel'];
 
