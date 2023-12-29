@@ -143,6 +143,7 @@ if (isset($_SESSION['user_login'])) {
                                                                 echo $daysDifference ?></h3>
             <h3 style="font-size: 200%" class="heading-title"><?php echo "Total Amount: ";
                                                                 echo $amount ?></h3>
+            <h3 style="font-size: 200%" class="heading-title">Please pay Via in this number: 01800000000</h3>
             <div class="flex">
 
                 <div class="inputBox">
