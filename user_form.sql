@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 27, 2023 at 11:34 PM
+-- Generation Time: Jan 01, 2024 at 07:24 AM
 -- Server version: 10.4.19-MariaDB
 -- PHP Version: 7.3.28
 
@@ -47,7 +47,8 @@ CREATE TABLE `bookings` (
 --
 
 INSERT INTO `bookings` (`id`, `name`, `email`, `phone`, `address`, `location`, `guests`, `arrivals`, `leaving`, `status`, `pid`, `amount`) VALUES
-(153, 'simin mrittika', 'siminsimindakpari@email.com', '015633831294', 'bangladesh', 'Bandarban', '5', '2023-12-11', '2023-12-24', 'Approved', '2345faewrf', '195000');
+(157, 'simin mrittika', 'siminsimindakpari@email.com', '015633831294', 'SEFS', 'SaintMartin', '50', '2023-12-19', '2023-12-24', 'Approved', 'DRGHDRTH', '750000'),
+(158, 'simin mrittika', 'siminsimindakpari@email.com', '015633831294', 'DGRGH', 'simla', '4', '2023-12-12', '2023-12-24', 'pending', ' ', '');
 
 -- --------------------------------------------------------
 
@@ -142,7 +143,8 @@ INSERT INTO `packages` (`id`, `title`, `description`, `image`, `rate`) VALUES
 (6, 'manali', '\r\n                            Budget-3000 per person\r\n                Tour Date- 26th April, 2023\r\n                Departure Place- Banani Office and Dhanmondi\r\n                \r\n             Day 1:\r\n\r\n             Depart from Dhaka in the morning (around 6-7 am) and head towards Khulna by bus/train.\r\n             Reach Khulna in the afternoon and transfer to a small boat.\r\n             Enjoy a leisurely boat ride through the winding rivers of the Sundarbans, taking in the scenic beauty and spotting wildlife like dolphins and various bird species.\r\n             Check in to a budget hotel/lodge near the Sundarbans.\r\n             Overnight stay in the hotel.\r\n             Day 2:\r\n\r\n             After breakfast, start a full-day boat trip to the heart of the Sundarbans.\r\n             Visit the Katka Beach and the famous watchtower for a panoramic view of the mangrove forest.\r\n             Have a picnic lunch at a suitable spot.\r\n             Visit the Sundarbans Tiger Reserve Forest, where you can spot various animals like tigers, deer, monkeys, and crocodiles.\r\n             Return to the hotel/lodge for dinner and overnight stay.\r\n             Day 3:\r\n\r\n             After breakfast, visit the Karamjal Wildlife Center, where you can observe various wildlife species including spotted deer, crocodiles, and monkeys.\r\n             Visit the forest office to learn about the conservation efforts in the Sundarbans.\r\n             Enjoy the sunset while cruising back to Khulna.\r\n             Return to the hotel/lodge for dinner and overnight stay.\r\n             Day 4:\r\n\r\n             After breakfast, check out from the hotel and head back to Dhaka.\r\n             Arrive in Dhaka in the afternoon and end the tour.                        ', 'uploads/22.jpg', '3000'),
 (7, 'Nafakhum', '\r\n                            Budget-3000 per person\r\n                Tour Date- 26th April, 2023\r\n                Departure Place- Banani Office and Dhanmondi\r\n                \r\n             Day 1:\r\n\r\n             Depart from Dhaka in the morning (around 6-7 am) and head towards Khulna by bus/train.\r\n             Reach Khulna in the afternoon and transfer to a small boat.\r\n             Enjoy a leisurely boat ride through the winding rivers of the Sundarbans, taking in the scenic beauty and spotting wildlife like dolphins and various bird species.\r\n             Check in to a budget hotel/lodge near the Sundarbans.\r\n             Overnight stay in the hotel.\r\n             Day 2:\r\n\r\n             After breakfast, start a full-day boat trip to the heart of the Sundarbans.\r\n             Visit the Katka Beach and the famous watchtower for a panoramic view of the mangrove forest.\r\n             Have a picnic lunch at a suitable spot.\r\n             Visit the Sundarbans Tiger Reserve Forest, where you can spot various animals like tigers, deer, monkeys, and crocodiles.\r\n             Return to the hotel/lodge for dinner and overnight stay.\r\n             Day 3:\r\n\r\n             After breakfast, visit the Karamjal Wildlife Center, where you can observe various wildlife species including spotted deer, crocodiles, and monkeys.\r\n             Visit the forest office to learn about the conservation efforts in the Sundarbans.\r\n             Enjoy the sunset while cruising back to Khulna.\r\n             Return to the hotel/lodge for dinner and overnight stay.\r\n             Day 4:\r\n\r\n             After breakfast, check out from the hotel and head back to Dhaka.\r\n             Arrive in Dhaka in the afternoon and end the tour.                        ', 'uploads/31.jpg', '2500'),
 (8, 'SaintMartin', '\r\n                            Budget-3000 per person\r\n                Tour Date- 26th April, 2023\r\n                Departure Place- Banani Office and Dhanmondi\r\n                \r\n             Day 1:\r\n\r\n             Depart from Dhaka in the morning (around 6-7 am) and head towards Khulna by bus/train.\r\n             Reach Khulna in the afternoon and transfer to a small boat.\r\n             Enjoy a leisurely boat ride through the winding rivers of the Sundarbans, taking in the scenic beauty and spotting wildlife like dolphins and various bird species.\r\n             Check in to a budget hotel/lodge near the Sundarbans.\r\n             Overnight stay in the hotel.\r\n             Day 2:\r\n\r\n             After breakfast, start a full-day boat trip to the heart of the Sundarbans.\r\n             Visit the Katka Beach and the famous watchtower for a panoramic view of the mangrove forest.\r\n             Have a picnic lunch at a suitable spot.\r\n             Visit the Sundarbans Tiger Reserve Forest, where you can spot various animals like tigers, deer, monkeys, and crocodiles.\r\n             Return to the hotel/lodge for dinner and overnight stay.\r\n             Day 3:\r\n\r\n             After breakfast, visit the Karamjal Wildlife Center, where you can observe various wildlife species including spotted deer, crocodiles, and monkeys.\r\n             Visit the forest office to learn about the conservation efforts in the Sundarbans.\r\n             Enjoy the sunset while cruising back to Khulna.\r\n             Return to the hotel/lodge for dinner and overnight stay.\r\n             Day 4:\r\n\r\n             After breakfast, check out from the hotel and head back to Dhaka.\r\n             Arrive in Dhaka in the afternoon and end the tour.                        ', 'uploads/32.jpg', '3000'),
-(10, 'Everest', '\r\n            sdfgrdfegrtfg', 'uploads/everst.jpg', '2400');
+(10, ' Everest ', '              \r\n            sdfgrdfegrtfg            das', 'uploads/', '2400'),
+(11, '  Meghaloy  ', '                            \r\n            wygethjdfg  erhrethergsdg ery eryh erg             zsfsdfsdefesdfsdf            ', 'uploads/meghaloy.jpg', '500');
 
 -- --------------------------------------------------------
 
@@ -240,7 +242,7 @@ ALTER TABLE `user_form`
 -- AUTO_INCREMENT for table `bookings`
 --
 ALTER TABLE `bookings`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=154;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=159;
 
 --
 -- AUTO_INCREMENT for table `hotels`
@@ -264,7 +266,7 @@ ALTER TABLE `login`
 -- AUTO_INCREMENT for table `packages`
 --
 ALTER TABLE `packages`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `rooms`
