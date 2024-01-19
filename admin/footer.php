@@ -1,5 +1,5 @@
 <footer class="footer mt-auto">
-            <div class="copyright bg-white">
+            <!-- <div class="copyright bg-white">
               <p>
                 &copy; <span id="copy-year">2019</span> Copyright Sleek Dashboard Bootstrap Template by
                 <a
@@ -9,7 +9,7 @@
                   >Abdus</a
                 >.
               </p>
-            </div>
+            </div> -->
             <script>
                 var d = new Date();
                 var year = d.getFullYear();
