@@ -7,8 +7,9 @@ $package_id =  $_GET['package_id'];
 $title = $_POST['title'];
 $description = $_POST['description'];
 $rate = $_POST['rate'];
-$image = $_POST['picc'];
-$target_file = $image;
+$preimage = $_POST['preimage'];
+$image = $_POST['image'];
+// $target_file = $image;
 
 
 if (isset($_POST['submit'])) {
@@ -68,12 +69,15 @@ if (isset($_POST['submit'])) {
     }
   } else {
     # code...
-    $target_file = null;
+    // $target_file = null;
   }
 } else {
   echo 'something went wrong. try again.';
 }
-
+if( $target_file == "uploads/")
+{
+  $target_file = $preimage;
+}
 echo '<script>alert("'.$target_file.'")</script>'; 
 $request = "UPDATE packages SET title='$title',description='$description',rate='$rate',image='$target_file' WHERE id=$package_id";
 

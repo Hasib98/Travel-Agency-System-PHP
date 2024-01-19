@@ -54,10 +54,18 @@ function Table_of_package_list($result)
     if ($item["status"] == "Approved")
     {
       $table_data = '<td class = "h5 bg-success text-white">' . $item["status"] . ' </td>' ;
+      $action = '<td class = "h5 text-success">Confirmed</td>';
+
     }
     else if ($item["status"] == "pending")
     {
       $table_data = '<td class = "bg-secondary text-white">' . $item["status"] . ' </td>' ;
+      $action = '<td>
+                      <form method="post">
+                      <input type="hidden" name="id_to_cancel" value=" ' . $item["id"] . '">
+                        <button type="submit" name="confirm_button" class="btn btn-success">Confirm</button>
+                      </form>
+                  </td>';
     }
     echo '<tr>';
     echo $table_data;
@@ -81,18 +89,10 @@ function Table_of_package_list($result)
                     
                   </form>
 
-                </td>
+                </td>';
 
-                <td>
-
-                  <form method="post">
-                  <input type="hidden" name="id_to_cancel" value=" ' . $item["id"] . '">
-                    <button type="submit" name="confirm_button" class="btn btn-success">Confirm</button>
-                    
-                  </form>
-
-                </td>
-              </tr>';
+                echo $action;
+              echo '</tr>';
   }
 
   echo '</tbody>

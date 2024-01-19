@@ -12,7 +12,7 @@ while ($row = mysqli_fetch_array($result)) {
   $title = $row['title'];
   $rate = $row['rate'];
   $description = $row['description'];
-  $image = $row['image'];
+  $preimage = $row['image'];
 }
 ?>
 
@@ -39,20 +39,20 @@ while ($row = mysqli_fetch_array($result)) {
             <label>Image</label>
             <input class="form-control" type="file" name="image">
 
-            <img src="<?php $_SERVER['SERVER_NAME'] . dirname($_SERVER["REQUEST_URI"]) ?>  <?php echo $image ?>" width="200px">
+            <img src="<?php $_SERVER['SERVER_NAME'] . dirname($_SERVER["REQUEST_URI"]) ?>  <?php echo $preimage ?>" width="200px">
 
           </div>
 
           <div class="form-row">
             <!-- <label>Description</label> -->
             <p></p>
-            <span><?php echo $image ?></span>
+            <span><?php echo $preimage ?></span>
             <textarea name="description" class="form-control" cols="30" rows="10">
               <?php echo $description ?>
             </textarea>
           </div>
           <div class="form-row mt-4">
-            <input type="hidden" name="picc" value="<?php echo $image ?>">
+            <input type="hidden" name="preimage" value="<?php echo $preimage ?>">
             <input class="btn btn-success" type="submit" name="submit" value="Update">
           </div>
         </form>

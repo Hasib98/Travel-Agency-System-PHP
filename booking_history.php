@@ -100,8 +100,6 @@ if (isset($_SESSION['user_login'])) {
             <?php foreach ($result as $item) { ?>
                 <div class="box">
                     <div class="image">
-
-
                         <img src="admin/<?php
 
                                         $query2 = "SELECT * from packages where title='" . $item['location'] . "'";
@@ -117,8 +115,9 @@ if (isset($_SESSION['user_login'])) {
                                         }
                                         echo $image;
                                         ?>">
-
                     </div>
+
+
                     <div class="content">
                         <h3><?php echo $item['location'] ?></h3>
                         <h3 style="color: darkcyan"><?php echo "("; echo $item['status']; echo ")"; ?></h3>
@@ -135,18 +134,31 @@ if (isset($_SESSION['user_login'])) {
                                                 echo $item['address'] ?></p>
                         <p style="color: magenta"><?php echo " Phone Number of Guest: ";
                                                     echo $item['phone'] ?></p>
-                        <form method="post">
-                            <input type="hidden" name="id_to_cancel" value="<?php echo $item['id'] ?>">
+                        
+                        
+                        <?php
+                        if( $item['status'] != "Approved")
+                        {
+                         echo
+
+                            '<form method="post">
+                            <input type="hidden" name="id_to_cancel" value="'.$item['id'].'">
                             <button type="submit" name="cancel_button" class="btn btn-danger">Cancel</button>
                         </form>
                         <form method="post">
-                            <input type="hidden" name="id_to_confirm" value="<?php echo $item['id'] ?>">
-                            <input type="hidden" name="location_to_confirm" value="<?php echo $item['location'] ?>">
-                            <input type="hidden" name="guest_to_confirm" value="<?php echo $item['guests'] ?>">
-                            <input type="hidden" name="arrivals_to_confirm" value="<?php echo $item['arrivals'] ?>">
-                            <input type="hidden" name="leaving_to_confirm" value="<?php echo $item['leaving'] ?>">
+                            <input type="hidden" name="id_to_confirm" value="'.$item['id'].'">
+                            <input type="hidden" name="location_to_confirm" value="'.$item['location'].'">
+                            <input type="hidden" name="guest_to_confirm" value="'.$item['guests'].'">
+                            <input type="hidden" name="arrivals_to_confirm" value="'.$item['arrivals'].'">
+                            <input type="hidden" name="leaving_to_confirm" value="'.$item['leaving'].'">
                             <button type="submit" name="confirm_button" class="btn btn-danger">Confirm</button>
-                        </form>
+                        </form>';
+
+                        }
+                        
+                        
+                        ?>
+                        
                     </div>
                 </div>
 
