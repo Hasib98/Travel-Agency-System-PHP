@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 01, 2024 at 07:23 AM
+-- Generation Time: Jan 19, 2024 at 09:59 PM
 -- Server version: 10.4.19-MariaDB
 -- PHP Version: 7.3.28
 
@@ -42,7 +42,6 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `firstname`, `lastname`, `email`, `phonenumber`, `password`) VALUES
 (1, 'simin', 'sadia', 'arhanislam88@gmail.com', '01775882883', '1111'),
-(106, 'Jingle', 'Publisher', 'jd@gmail.com', '01781141204', '2222'),
 (107, 'goru', 'chagol', 'g@gmail.com', '1111111111111', '1111'),
 (109, 'somo', 'komo', 'somo@mail.com', '234234234523', '1111'),
 (120, 'simin', 'mrittika', 'siminsimindakpari@email.com', '015633831294', '1234'),
