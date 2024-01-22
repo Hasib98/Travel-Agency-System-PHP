@@ -12,13 +12,13 @@
       </a>
     </li>
 
-    <li>
+    <!-- <li>
         <a class="sidenav-item-link" href="index.php">
             <i class="mdi mdi-view-dashboard-outline"></i>
               <span class="nav-text">Users</span>
 
           </a>
-      </li>
+      </li> -->
 
     <li>
       <a class="sidenav-item-link" href="packages.php">

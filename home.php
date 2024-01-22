@@ -93,33 +93,39 @@ require_once 'session.php';
     <h1 class="heading-title">Our services</h1>
     <div class="box-container">
         <div class="box">
-            <img src="" alt="">
-            <h3>Tour Guide</h3>
+            <!-- <img src="" alt=""> -->
+            <a href="tour_guide.php"><h3>Tour Guide</h3></a>
+            
         </div>
 
         <div class="box">
-            <img src="" alt="">
-            <h3>Trakking</h3>
+            <!-- <img src="" alt=""> -->
+            <a href="tracking.php"><h3>Trekking</h3></a>
+            
         </div>
 
         <div class="box">
-            <img src="" alt="">
-            <h3>Affordable Tours</h3>
+            <!-- <img src="" alt=""> -->
+            <a href="affordable_tour.php"><h3>Affordable Tours</h3></a>
+            
         </div>
 
         <div class="box">
-            <img src="" alt="">
-            <h3>Hotel Booking</h3>
+            <!-- <img src="" alt=""> -->
+            <a href="hotel_booking.php"><h3>Hotel Booking</h3></a>
+            
         </div>
 
         <div class="box">
-            <img src="" alt="">
-            <h3>Adventure</h3>
+            <!-- <img src="" alt=""> -->
+            <a href="adventure.php"><h3>Adventure</h3></a>
+            
         </div>
 
         <div class="box">
-            <img src="" alt="">
-            <h3>Camping</h3>
+            <!-- <img src="" alt=""> -->
+            <a href="camping.php"><h3>Camping</h3></a>
+            
         </div>
     </div>
 </section>
