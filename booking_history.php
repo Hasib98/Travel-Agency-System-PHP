@@ -12,7 +12,6 @@ if (isset($_SESSION['user_login'])) {
     $id = $user['id'];
 }
 
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -49,7 +48,7 @@ if (isset($_SESSION['user_login'])) {
                 <a href="home.php">Home</a>
                 <a href="about.php">about</a>
                 <a href="package.php">package</a>
-                <a href="book.php">book</a>
+                <!-- <a href="book.php">book</a> -->
                 <a href="">' . $firstname . '</a>
                 <a href="">' . $lastname . '</a>
                 <a href="logout.php">Logout</a>
@@ -101,8 +100,7 @@ if (isset($_SESSION['user_login'])) {
                 <div class="box">
                     <div class="image">
                         <img src="admin/<?php
-
-                                        $query2 = "SELECT * from packages where title='" . $item['location'] . "'";
+                                        $query2 = "select * from packages where title='" .$item['location']. "'";
                                         if ($result2 = $mysqli->query($query2)) {
                                             $row = $result2->fetch_assoc();
 
@@ -124,6 +122,8 @@ if (isset($_SESSION['user_login'])) {
                         
                         <p style="color: green"><?php echo "ID number: ";
                                                 echo $item['id'] ?></p>
+                        <p style="color: green"><?php echo "Per person Rate: ";
+                                                echo $rate ?></p>
                         <p style="color: green"><?php echo "Number of Guests: ";
                                                 echo $item['guests'] ?></p>
                         <p style="color: maroon"></p><?php echo "Arrival Time: ";
@@ -151,6 +151,7 @@ if (isset($_SESSION['user_login'])) {
                             <input type="hidden" name="guest_to_confirm" value="'.$item['guests'].'">
                             <input type="hidden" name="arrivals_to_confirm" value="'.$item['arrivals'].'">
                             <input type="hidden" name="leaving_to_confirm" value="'.$item['leaving'].'">
+                            <input type="hidden" name="rate_to_confirm" value="'.$rate.'">
                             <button type="submit" name="confirm_button" class="btn btn-danger">Confirm</button>
                         </form>';
 
@@ -192,6 +193,7 @@ if (isset($_SESSION['user_login'])) {
         $guestToConfirm = $_POST['guest_to_confirm'];
         $arrivalsToConfirm = $_POST['arrivals_to_confirm'];
         $leavingToConfirm = $_POST['leaving_to_confirm'];
+        $rate = $_POST['rate_to_confirm'];
         session_start();
         $_SESSION['idToConfirm'] = $idToConfirm;
         $_SESSION['locationToConfirm'] = $locationToConfirm;

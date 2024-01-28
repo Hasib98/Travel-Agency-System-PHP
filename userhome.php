@@ -39,9 +39,9 @@ if (isset($_SESSION['user_login'])) {
         <a href="home.php" class="logo">Take a Trip</a>
         <nav class="navbar">
             <a href="home.php">Home</a>
-            <a href="about.php">about</a>
+            <a href="about.php">About</a>
             <a href="package.php">package</a>
-            <a href="book.php">book</a>
+            <!-- <a href="book.php">book</a> -->
             <a href="booking_history.php"> <?php
                                             echo $firstname;
                                             ?></a>

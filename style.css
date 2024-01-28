@@ -168,6 +168,7 @@ section{
 }
 .home .slide .content .btn {
     animation: fadeIn .3s linear backwards .6s;
+    
 }
 .home .swiper-button-next,
 .home .swiper-button-prev{

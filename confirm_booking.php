@@ -1,8 +1,6 @@
 <?php
 session_start();
 $idToConfirm = $_SESSION['idToConfirm'];
-
-
 $locationToConfirm = $_SESSION['locationToConfirm'];
 $guestToConfirm = $_SESSION['guestToConfirm'];
 $arrivalsToConfirm = $_SESSION['arrivalsToConfirm'];
@@ -14,21 +12,24 @@ $arrivalsDate = new DateTime($arrivalsToConfirm);
 $leavingTDate = new DateTime($leavingToConfirm);
 $interval = $arrivalsDate->diff($leavingTDate);
 $daysDifference = $interval->days;
-echo  "........\n";
 
+
+echo  "......ID..\n";
 
 echo $idToConfirm;
-echo  "........\n";
+echo  "......Location..\n";
 echo $locationToConfirm;
-echo  ".........\n";
+echo  "......Guest...\n";
 echo $guestToConfirm;
-echo  ".........\n";
+echo  "......AT...\n";
 echo $arrivalsToConfirm;
-echo  "........\n";
+echo  "......LT..\n";
 echo $leavingToConfirm;
 echo  "...........\n";
+echo  ".......RATE....\n";
 echo $rateToConfirm;
 echo  "........\n";
+echo  ".....DDF...\n";
 
 echo $daysDifference;
 
@@ -137,6 +138,8 @@ if (isset($_SESSION['user_login'])) {
                                                                     echo $lastname; ?></h1>
 
             <h2 style="font-size: 200%" class="heading-title"><?php echo $locationToConfirm ?></h2>
+            <h3 style="font-size: 200%" class="heading-title"><?php echo "Per person Fee: ";
+                                                                echo $rateToConfirm ?></h3>
             <h3 style="font-size: 200%" class="heading-title"><?php echo "Number of Guests: ";
                                                                 echo $guestToConfirm ?></h3>
             <h3 style="font-size: 200%" class="heading-title"><?php echo "Number of Days: ";
@@ -167,8 +170,6 @@ if (isset($_SESSION['user_login'])) {
         //echo $query_insert;
         require('admin/db.php');
         mysqli_query($mysqli, $query_insert);
-
-        
         sleep(1);
         header('location:booking_history.php');
         // //ob_end_flush();

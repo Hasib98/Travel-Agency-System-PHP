@@ -46,7 +46,7 @@ if (isset($_SESSION['user_login'])) {
                 <a href="home.php">Home</a>
                 <a href="about.php">about</a>
                 <a href="package.php">package</a>
-                <a href="book.php">book</a>
+                <!-- <a href="book.php">book</a> -->
                 <a href="booking_history.php">' . $firstname . '</a>
                 <a href="booking_history.php">' . $lastname . '</a>
                 <a href="logout.php">Logout</a>
@@ -75,7 +75,7 @@ if (isset($_SESSION['user_login'])) {
 
 
 
-    <div class="heading" style="background: url(images/katka.jpg) no-repeat;">
+    <div class="heading" style="background: url(images/36.jpeg) no-repeat;">
         <h1>Packages</h1>
     </div>
 

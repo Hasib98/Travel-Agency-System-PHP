@@ -44,7 +44,7 @@
                 <a href="home.php">Home</a>
                 <a href="about.php">about</a>
                 <a href="package.php">package</a>
-                <a href="book.php">book</a>
+                <!-- <a href="book.php">book</a> -->
                 <a href="booking_history.php">'.$firstname.'</a>
                 <a href="booking_history.php">'.$lastname.'</a>
                 <a href="logout.php">Logout</a>
@@ -74,7 +74,7 @@
 
 <!-- header section ends -->
 
-<div class="heading" style="background: url(images/about.jpg)no-repeat;">
+<div class="heading" style="background: url(images/36.jpeg)no-repeat;">
     <h1>about us</h1>
 </div>
 
